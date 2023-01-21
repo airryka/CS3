@@ -1,0 +1,133 @@
+
+body{
+    background-image: url(images/1975bg.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+span {
+    font-size: 25px;
+    color: black;
+    background-color: #011689;
+}
+
+#header img{
+    float: left;
+}
+
+#content {
+    clear:both;
+}
+
+#content-text {
+    float: left;
+    font-size: small;
+    width: 100%;
+    font-family: Andale Mono, monospace;
+}
+
+#footer {
+    clear: both;
+}
+
+#footer p {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+#content-text p {
+    padding: 5px 30 px;
+    text-indent: 30px;
+    text-align: justify;
+}
+
+.button {
+    display: inline-block;
+    border-radius: 10px;
+    background-color: #011689;
+    border: 1px solid white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 19px;
+    width: 200px;
+    height:50px;
+    transition: all 0.5s;
+    cursor: pointer;
+    position: absolute;
+    bottom: 15px;
+    right: 550px;
+    font-size: 18px;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    color:  #ffffff;
+  }
+
+  .button a{
+    text-decoration: none;
+    color: #ffffff;
+    background: none;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  .sprite {
+    background: url('images/icon.png') no-repeat -13px -197px;
+    width: 39px;
+    height: 38px;
+    padding-left: 7px;
+    
+  }
+  .sprite:hover {
+    background: url('images/icon.png') no-repeat -13px -57px;
+    width: 39px;
+    height: 39px;
+  }
+
+  .sprite1 {
+    background: url('images/icon.png') no-repeat -106px -243px;
+    width: 38px;
+    height: 39px;
+    
+  }
+  .sprite1:hover {
+    background: url('images/icon.png') no-repeat -106px -104px;
+    width: 37px;
+    height: 39px;
+  }
+
+  footer {
+    padding-top: 550px;
+
+}
+
+.sprite1 {
+    float: left;
+    padding-right: 10px;
+}  
+
+.sprite {
+  float: left;
+}
