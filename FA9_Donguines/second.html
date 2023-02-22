@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>second</title>
+        <style>
+            * {
+                text-align: center;
+            }
+            button{
+                font-size: 20px;
+            }
+            img{
+                height: auto;
+                width: 5.25cm;
+            }
+        </style>
+    </head>
+    <body>
+        <img id="img" src="noodles.jfif">
+        <br>
+        <button onclick="firstImage()">Button 1</button>
+        <button onclick="secondImage()">Button 2</button>
+
+        <script>
+            function firstImage(){
+                document.getElementById("img").src = "flower.jfif";
+            }
+            function secondImage(){
+                document.getElementById("img").src = "noodles.jfif";
+            }
+        </script>
+    </body>
+</html>
