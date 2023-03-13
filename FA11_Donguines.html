@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>geometry</title>
+		<meta name="keywords" content="HTML, CSS, JavaScript">
+		<meta name="author" content="Donguines, Ma. Erika">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+	function determineTriangle(a, b, c) {
+        if (a === b && b === c) {
+          alert("The triangle is EQUILATERAL.");
+        } else if (a === b || a === c || b === c) {
+          alert("The triangle is ISOSCELES.");
+        } else {
+          alert("The triangle is SCALENE.");
+        }
+      }
+      
+      let a = prompt("Enter the length of side a: ");
+      let b = prompt("Enter the length of side b: ");
+      let c = prompt("Enter the length of side c: ");
+      
+      determineTriangle(parseInt(a), parseInt(b), parseInt(c));
+    </script>
+</body>
+</html>

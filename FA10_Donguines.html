@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>breakdown momints</title>
+		<meta name="keywords" content="HTML, CSS, JavaScript">
+		<meta name="author" content="Donguines, Ma. Erika">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<h1>Random Number Breakdown</h1>
+	<p>Click the button to generate a random number and display its breakdown.</p>
+	<button onclick="generateNumber()">Generate Number</button>
+	<p id="generatedNumber"></p>
+	<p id="breakdown"></p>
+
+	<script>
+		function generateNumber() {
+			var x = Math.floor(Math.random() * 1001);
+			document.getElementById("generatedNumber").innerHTML = "Randomly generated number: " + x;
+			let z = x.toString();
+			if (z.length == 3){
+				var i = z.charAt(0)*100;
+				var m = z.charAt(1)*10;
+				var y = z.charAt(2);
+			} else if (z.length == 2){
+				var i = 0;
+				var m = z.charAt(0)*10;
+				var y = z.charAt(1);
+			} else {
+				var i = 0;
+				var m = 0;
+				var y = z.charAt(0);
+			}
+		document.getElementById("breakdown").innerHTML = "Breakdown: "+i+", "+m+", "+y;
+			}
+	</script>
+</body>
+</html>
