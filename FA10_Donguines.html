@@ -15,7 +15,7 @@
 
 	<script>
 		function generateNumber() {
-			var x = Math.floor(Math.random() * 1001);
+			var x = Math.floor(Math.random() * 1001).toFixed(0);
 			document.getElementById("generatedNumber").innerHTML = "Randomly generated number: " + x;
 			let z = x.toString();
 			if (z.length == 3){
