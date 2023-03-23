@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Choose Background Color</title>
+        <meta charset="UTF-8"> 
+		<meta name="author" content="Ma. Erika S. Donguines"> 
+		<meta name="keywords" content="HTML, CSS, JavaScript"> 
+		<link rel="icon" href="icon.png" type="image/gif">
+        <style>
+        	* { box-sizing: border-box; 
+            	font-family: arial; 
+                color: white;
+            }           
+            body {background:navy}
+            ul {
+            	list-style-type: none;
+                width: 100px;
+                padding: 0;
+                border: 1px solid black;
+                background: gray;
+            }
+            li {width: 100%;
+            	border-bottom: 1px solid black;
+                padding: 5px;
+            }
+            li:nth-child(3) {border:none}
+            a {	text-decoration:none;
+            	display:block;
+                width: 100%;
+            }
+            li:nth-child(1):hover {background:purple}
+            li:nth-child(2):hover {background:navy}
+            li:nth-child(3):hover {background:maroon}
+            
+        </style>
+
+	</head>
+	<body id = "body">
+		<h2> Choose Background Color </h2>
+        <ul>
+        	<li><a href="#" onclick="purple(); return false;">Purple</a></li>
+            <li><a href="#" onclick="navy(); return false;"> Navy </a></li>
+            <li><a href="#" onclick="maroon(); return false;"> Maroon </a></li>
+        </ul>
+		
+
+        <script>
+            function purple() { /*The body background will change to purple*/
+                document.getElementById("body").style.backgroundColor = "purple";
+            }
+            function navy() { /*The body background will change to navy*/
+                document.getElementById("body").style.backgroundColor = "navy";
+            }
+            function maroon() { /*The body background will change to maroon*/
+                document.getElementById("body").style.backgroundColor = "maroon";
+            }
+        </script>
+	</body>
+</html>
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Toss coin</title>
+        <meta charset="UTF-8"> 
+		<meta name="author" content="Ma. Erika S. Donguines"> 
+		<meta name="keywords" content="HTML, CSS, JavaScript"> 
+		<link rel="icon" href="icon.png" type="image/gif">
+        <style>
+        	body {background: navy; 
+            	text-align: center;
+            	font-family: arial;
+                color: white;
+            }
+            button {padding: 10px; background:violet }
+            span {color: yellow}
+            #coin, h5 {color: yellow; }
+            #coin { background: gray; 
+            	width: 25px; 
+                height: 25px;
+                padding: 25px;          
+                border: 5px dashed darkgray;
+                border-radius: 50%;
+                margin: 0 auto;
+                
+            }
+            
+        </style>
+
+	</head>
+	<body onload="getGuess()">
+        <h1> Heads or Tail? </h1>
+        <h2 onclick="getGuess()"> Click here to change your Guess: <span id="guess"> </span></h2>
+        <h2 id="coin" onclick="coin()"> H </span></h2>   
+        <h5> Click on the coin above to randomly change its face and compare with your guess </h5> 
+        <script>
+            var getGuess = function coin() {
+                uGuess = prompt("Type H for head and T for tail","H");
+                uGuess.toUpperCase; // converting to an uppercase letter
+                (uGuess != "H" && uGuess != "T") ?	alert("Wrong Input"):
+                    guess.innerHTML = uGuess;
+            }
+
+            function coin(){
+                var random = Math.floor(Math.random()* 2).toFixed(0); // randomized the order of H and T
+
+                //displays H and T on the coin (randomly)
+                if(random == 0){ 
+                    document.getElementById("coin").innerHTML = "H";
+                } else {
+                    document.getElementById("coin").innerHTML = "T";
+                }
+
+                //prompts the user if they got it right or not
+                if (random == 0 && uGuess == "H"){
+                        alert("You've guess it right!");
+                    } else if (random !=0 && uGuess == "T"){
+                        alert("You've guess it right!");
+                    } else {
+                        alert("You've got it wrong :( Better luck next time!")
+                    }
+            } 
+ 
+        </script>
+	</body>
+</html>
+

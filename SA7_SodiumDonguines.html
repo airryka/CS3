@@ -1,0 +1,87 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<title>Numerology</title>
+		<meta charset="UTF-8"> 
+		<meta name="author" content="Ma. Erika S. Donguines"> 
+		<meta name="keywords" content="HTML, CSS, JavaScript"> 
+		<link rel="icon" href="icon.png" type="image/gif">
+        <style>
+        	body {background: lightblue; 
+            	text-align: center;
+            	font-family: arial;
+                color: navy;
+            }
+            button {padding: 10px; background:violet }
+            span {font-size: 1.0em; color: maroon}
+        </style>
+
+	</head>
+<body>
+	<h1> Your Fortune is in your name </h1>
+	<h2> Your Name is: <span id="thename"> </span></h2>
+    <h2> Today's fortune: <span id="fortune"> </span></h2>
+    <p id="demo"></p>
+    <button onclick="inputName()"> Click here to enter your name </button>
+     <script>
+		function inputName(){
+			var name = prompt("Please enter your full name to recieve your fortune", ""); //ask the user to input their name
+
+			document.getElementById ("thename").innerHTML = name; //displays name
+			var addLength = name.length; 
+			
+			while(addLength > 9) { //if length is a 2-digit number
+			addLength = (addLength - (addLength % 10)) / 10 + (addLength % 10); //function adds the 2-digits to make it 1-digit
+			}
+			
+			 // user's fortune corresponding to their numerology digit //
+			switch(addLength){ 
+				case 0:
+					var destiny = ("You will get free meals today !");
+					document.getElementById("fortune").innerHTML = destiny;
+					break;
+				case 1:
+					var destiny = ("you will receive good news !");
+					document.getElementById("fortune").innerHTML = destiny;
+					break;
+				case 2:
+					var destiny = ("you will lose your phone !");
+					document.getElementById("fortune").innerHTML = destiny;
+					break;
+				case 3:
+					var destiny = ("you will pass all your exams !");
+					document.getElementById("fortune").innerHTML = destiny;
+					break;
+				case 4:
+					var destiny = ("you will have the best day ever !");
+					document.getElementById("fortune").innerHTML = destiny;
+					break;
+				case 5:
+					var destiny = ("you will have a BAD BAD day :(");
+					document.getElementById("fortune").innerHTML = destiny;
+					break;
+				case 6:
+					var destiny = ("a special person come back to your life !");
+					document.getElementById("fortune").innerHTML = destiny;
+					break;
+				case 7:
+					var destiny = ("you will meet your soulmate !");
+					document.getElementById("fortune").innerHTML = destiny;
+					break
+				case 8:
+					var destiny = ("your ex will text you !");
+					document.getElementById("fortune").innerHTML = destiny;
+					break;
+				case 9:
+					var destiny = ("your crush will confess to you !");
+					document.getElementById("fortune").innerHTML = destiny;
+					break;	
+				default:
+					var destiny = ("no fortune for you today 🙁");
+					document.getElementById("fortune").innerHTML = destiny;
+			}
+		}
+    </script>
+   
+</body>
+</html>
