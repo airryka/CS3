@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Magic Shop ! </title>
+		<meta charset="UTF-8"> 
+		<meta name="author" content="Ma. Erika S. Donguines"> 
+		<meta name="keywords" content="HTML, CSS, JavaScript"> 
+		<link rel="icon" href="icon.png" type="image/gif">
+		<style>
+		span {color: blue; text-decoration:underline}
+		button {width: 100px; padding: 5px; background: pink;}
+		</style>
+
+		</head>
+	<body>
+		<h1> Welcome to My Online Shop </h1>
+		<h2> Please select from the following items </h2>
+		<!--- provide your own 3 items and their prices in the list --->
+		<ol>
+			<li> Shabu-shabu      price: 400.00 </li>
+			<li> Coke(a) Cola     price: 50.00 </li>
+			<li> Meringues (6 pc) price: 500.00 </li>
+		</ol>
+		<!-- the following will be used to display purchase information -->
+		<p> Item selected : <span id="item"> </span> </p>
+		<p> Qty bought : <span id="qty"> </span> </p>
+		<p> Amount to pay for the item: <span id="bill"> </span> </p>
+		<p> Current Total Bill <span id="tbill"> </span> </p>
+		<button onclick="done()"> Buy an Item </button>
+		<button onclick="clearItem()"> Clear </button>
+		
+		<script>
+			function done(){
+				var subtotal = 0;
+				var total = 0;
+				var choice = prompt("What item would you like to buy today? (type in NUMBER only Ex: 1)");
+				var quantity = prompt("Quantity:");
+				if (Number.isInteger(choice, quantity)){
+					alert("Invalid input !");
+					return;
+				}
+				
+				// displays when user buys item #1 //
+				if(choice == 1){ 
+
+					total += 400 * quantity;
+					subtotal = 400*quantity;
+
+					item.innerHTML= "Shabu-shabu";
+					qty.innerHTML = quantity;
+					bill.innerHTML = subtotal.toFixed(2);
+					tbill.innerHTML = total;
+
+				// displays when user buys item #2 //
+				} else if (choice == 2) {
+					total += 50 * quantity;
+					subtotal = 50 * quantity;
+
+					item.innerHTML= "Coke(a) Cola";
+					qty.innerHTML = quantity;
+					bill.innerHTML = subtotal.toFixed(2);
+					tbill.innerHTML = total.toFixed(2);
+					
+				// displays when user buys item #3 //
+				} else if (choice == 3) {
+					total += 500 * quantity;
+					subtotal = 500 * quantity;
+
+					item.innerHTML= "Meringue";
+					qty.innerHTML = quantity;
+					bill.innerHTML = subtotal.toFixed(2);
+					tbill.innerHTML = total.toFixed(2);
+				} else { 
+					alert("Invalid input !");
+				}
+			}
+
+			function clearItem(){  //clears all inputed data by user
+				document.getElementById("item").innerHTML = "";
+				document.getElementById("qty").innerHTML = "";
+				document.getElementById("bill").innerHTML = "";
+				document.getElementById("tbill").innerHTML = "";
+			}
+		</script>
+	</body>
+
+</html>
