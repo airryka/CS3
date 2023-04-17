@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="keywords" content="HTML, CSS, JavaScript">
+		<meta name="author" content="Ma. Erika S. Donguines">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+	table,th,td{
+          	border: 1px solid black;
+          	border-collapse:collapse;
+		}
+	th,td{
+		border: 1px solid black;
+                text-align: center;
+                width:30px;
+                font-size:20px;
+		}
+	th{
+		color:black;
+		}
+
+  
+</style>
+</head>
+<body>
+<h2>Multiplication Table</h2>
+
+<p>[ Enter numbers between 2 and 10 ]</p>
+
+    <label for="x"></label>
+    <input type="number" id="start"> <br>
+    <p>by</p>
+    <label for="y"></label>
+    <input type="number" id="end"> <br>
+    
+<p>[ Click the button in order to generate a table ]</p>
+<button onclick="display()">Click me</button>
+
+<p>[ Multiplication Table ]</p>
+<table id="multitable"></table><br>
+<script> 
+	function display() {
+        let y = parseInt(document.getElementById("start").value);
+        let x = parseInt(document.getElementById("end").value);
+    		if (x<2 || x>10){
+    		alert("Please enter numbers between 2 and 10");
+            	return;
+                }
+    		else if (y<2 || y>10){
+            	alert("Please enter numbers between 2 and 10");
+                return;
+                }
+    		else{
+            	var table=document.getElementById('multitable');
+    		var output="";
+      		for (var i=1;i<=y;i++) {
+  		  		output +="<tr>";
+          			for (var j=1;j<=x;j++) {
+          			if (i==1 && j==1)
+    		    		output+="<th>1</th>";
+    	    			else
+          				{
+        	  				if (i==1 || j==1)
+    		      				output+="<th>"+i*j+"</th>";
+    		    				else
+			        		output+="<td>"+i*j+"</td>"; 
+           				}
+        		}
+        		output +="</tr>";
+       		}
+    		table.innerHTML=output;
+   		} 
+       }
+ 
+</script>
+</body>
+</html>
