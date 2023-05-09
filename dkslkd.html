@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="keywords" content="HTML, CSS, JavaScript">
+		<meta name="author" content="Ma. Erika S. Donguines">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			/* user-select: none; */
+			box-sizing: border-box;
+			font-family: 'Poppins', sans-serif;
+		  }
+		  html,body{
+			height: 150%;
+			background-image: linear-gradient(#eeaeca, #94bbe9);
+			background-repeat: no-repeat;
+		  }
+		  body{
+			display: grid;
+			place-items: center;
+			text-align: center;
+		  }
+		  .content{
+			width: 500px;
+			padding: 40px 30px;
+			background: #dde1e7;
+			border-radius: 10px;
+			box-shadow: -3px -3px 7px #ffffff73,
+						 2px 2px 5px rgba(94,104,121,0.288);
+		  }
+		  .content .text{
+			font-size: 33px;
+			font-weight: 600;
+			margin-bottom: 35px;
+			color: #595959;
+		  }
+		  .field{
+			height: 50px;
+			width: 100%;
+			display: flex;
+			position: relative;
+			margin-bottom: 20px;
+		  }
+		  .field:nth-child(2){
+			margin-top: 20px;
+		  }
+		  .field input{
+			height: 100%;
+			width: 100%;
+			padding-left: 45px;
+			font-size: 18px;
+			background: #dde1e7;
+			color: #595959;
+			border-radius: 25px;
+		  }
+		  .field label{
+			display: none;
+		  }
+		  #button input{
+			margin: 15px 10px;
+			width: 40%;
+			height: 50px;
+			margin-bottom: 30px;
+			font-size: 18px;
+			line-height: 50px;
+			font-weight: 600;
+			background: #dde1e7;
+			border-radius: 25px;
+			border: none;
+			outline: none;
+			cursor: pointer;
+			color: #595959;
+			box-shadow: -3px -3px 7px #ffffff73,
+						 2px 2px 5px rgba(94,104,121,0.288);
+		  }
+		  #button input:focus{
+			color: #3498db;
+			box-shadow: inset 2px 2px 5px #BABECC,
+						inset -5px -5px 10px #ffffff73;
+		  }
+
+		  select{
+			height: 100%;
+			width: 100%;
+			padding-left: 45px;
+			font-size: 18px;
+			background: #dde1e7;
+			color: #595959;
+			border-radius: 25px;
+			box-shadow: inset 2px 2px 5px #BABECC,
+						inset -5px -5px 10px #ffffff73;
+		  }
+
+		  textarea {
+			height: 100%;
+			width: 100%;
+			padding-left: 45px;
+			font-size: 18px;
+			background: #dde1e7;
+			color: #595959;
+			border-radius: 25px;
+			box-shadow: inset 2px 2px 5px #BABECC,
+						inset -5px -5px 10px #ffffff73;
+		  }
+		  textarea {
+			height: 100%;
+			width: 100%;
+			padding-left: 45px;
+			font-size: 18px;
+			background: #dde1e7;
+			color: #595959;
+			border-radius: 25px;
+			padding-top: 20px;
+			margin-top: 10px;
+			box-shadow: inset 2px 2px 5px #BABECC,
+						inset -5px -5px 10px #ffffff73;
+		  }
+
+		  .comments label{
+			font-size: large;
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+			background: #dde1e7;
+			color: #595959;
+			text-decoration: underline;
+		  }
+
+		  fieldset {
+			border: none;
+		  }
+
+		  #submittedInfo p {
+			font-family: 'Poppins', sans-serif;
+			text-align: left;
+			margin: 10px;
+			color: #595959;
+			font-size: 18px;
+		  }
+
+		  img {
+			width: 90%;
+			margin-bottom: 10px;
+		  }
+
+	</style>
+    </head>
+    <body>
+		<div class="content">
+
+			<form>
+			<fieldset>
+				<legend class="text">SIGN UP FORM</legend>
+			<!-- Name of the User -->
+				  <div class="field"> 
+					  <label for="urName">Name</label>
+					  <input type="text" id="urName" name="urName" onblur="greenDaw(this.value, this.id)" onfocus="redDaw(this.value, this.id)"  placeholder="Full Name" required>
+				   </div>
+   
+			<!-- Username of the User -->
+			   <div class="field">
+					  <label for="userName">Username</label>
+					  <input type="text" id="userName" name="userName" onblur="greenDaw(this.value, this.id)" onfocus="redDaw(this.value, this.id)" placeholder="Username" required>
+			   </div>
+   
+			<!-- Asks for the User's Gender -->  
+			   <div class="field">
+				  <label for="gender">Gender</label>
+				  <select name="gender" id="gender" onblur="redDaw(this.value, this.id)"  oninvalid="this.setCustomValidity('Please select your gender. If preferred not to say, select last option :P')", required>
+					 <option value="" disabled selected>--- Select your option ---</option>
+					 <option value="male">Male</option>
+					 <option value="female">Female</option>
+					 <option value="others">prefer not to mention</option>
+				  </select>
+				</div>
+   
+			<!-- Email of the User -->
+			<div class="field">
+			   <label for="email">Email</label>
+			   <input type="email" id="email" name="email" onblur="greenDaw(this.value, this.id)" onfocus="redDaw(this.value, this.id)" placeholder="Example: iloverenjun@gmail.com" required>
+			</div>
+			<!-- Password of the User -->
+			   <div class="field">
+				  <label for ="password">Password</label>
+				  <input type="password" id="password" name="password" onblur="greenDaw(this.value, this.id)" onfocus="redDaw(this.value, this.id)" placeholder="Password" required>
+			   </div>
+   
+			<!-- Address of the User -->
+			   <div class="field">
+				  <label for="address">Address</label>
+				  <input type="text" id="address" name="address" onblur="greenDaw(this.value, this.id)" onfocus="redDaw(this.value, this.id)" placeholder="Address" required>
+			   </div>
+   
+			
+			<!-- Asks user to leave a little comment -->
+			<div class="comments">
+			   <label for="comments">Tell us more about yourself !</label>
+			   <textarea id="comments" name="comments" rows="2" cols="50" onblur="greenDaw(this.value, this.id)" onfocus="redDaw(this.value, this.id)"required> </textarea>
+			</div>
+   
+			<!-- Sign Up button -->
+			<div id="button">
+			   <input type="reset" onclick="reSet()">
+			   <input type="submit">
+			</div>
+		    </fieldset>
+
+			<!-- DIVIDER -->
+			<img src="https://cutekawaiiresources.files.wordpress.com/2014/08/1179699eojjsnnvc6.gif">
+
+			<fieldset>
+				<legend class="text"> Summarized Personal Information </legend>
+	
+				<div id="submittedInfo">
+				<p> Name: <span id="urName2"> </span> </p>
+				<p> Username: <span id="userName2"> </span> </p>
+				<p> Gender: <span id="gender2"> </span> </p>
+				<p> Password: <span id="password2"> </span> </p>
+				<p> Email: <span id="email2"> </span> </p>
+				<p> Address: <span id="address2"> </span> </p>
+				<p> More about the user: <span id="comment"> </span> </p>
+				</div>
+				</fieldset>
+
+			</form>
+   
+			<script>
+				//onfocus
+			   function greenDaw(inputString, id) {
+				  if (inputString.trim() == "") {
+				  document.getElementById(id).style.borderColor = "red";
+				 }
+				  else {
+					 document.getElementById(id).style.borderColor = "lime";
+				  }
+
+			   }
+
+			   //onblur
+			   function redDaw(inputString, id) {
+				  if (inputString.trim() == "") {
+				  document.getElementById(id).style.borderColor = "red";
+				 }
+				  else{
+					document.getElementById(id).style.borderColor = "lime";
+				  };
+			   }
+
+			   function reSet() {
+				document.getElementById("urName").style.borderColor = "black";
+				document.getElementById("userName").style.borderColor = "black";
+				document.getElementById("gender").style.borderColor = "black";
+				document.getElementById("email").style.borderColor = "black";
+				document.getElementById("password").style.borderColor = "black";
+				document.getElementById("address").style.borderColor = "black";
+				document.getElementById("comments").style.borderColor = "black";
+				document.getElementById("urName2").innerHTML = "";
+				document.getElementById("userName2").innerHTML = "";
+				document.getElementById("gender2").innerHTML = "";
+				document.getElementById("email2").innerHTML = "";
+				document.getElementById("password2").innerHTML = "";
+				document.getElementById("address2").innerHTML = "";
+				document.getElementById("comment").innerHTML = "";
+			   }
+
+			   document.querySelector("form").addEventListener("submit", function(event) {
+				event.preventDefault();
+				document.querySelector("#urName2").textContent = document.querySelector("#urName").value;
+				document.querySelector("#userName2").textContent = document.querySelector("#userName").value;
+				document.querySelector("#gender2").textContent = document.querySelector("#gender").value;
+				document.querySelector("#email2").textContent = document.querySelector("#email").value;
+				document.querySelector("#password2").textContent = document.querySelector("#password").value;
+				document.querySelector("#address2").textContent = document.querySelector("#address").value;
+				document.querySelector("#comment").textContent = document.querySelector("#comments").value;
+			   });
+			</script>
+		 </div>
+    </body>
+</html>
